@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+* {
+  font-family: "Roboto", serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header nav {
+  display: flex;
+  margin-top: 10px;
+}
+header nav i {
+  font-size: 35px;
+  color: #101010;
+}
+header nav .logo {
+  margin: auto;
+  width: 40%;
+}
+header .restaurant_photo {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.menu__wrapper {
+  position: relative;
+  top: -103px;
+  background-color: #F6F6F6;
+  padding-top: 70px;
+  padding-bottom: 50px;
+  border-radius: 70px 70px 0 0;
+}
+.menu__wrapper .title__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 94%;
+  margin: auto;
+}
+.menu__wrapper .title__wrapper h1 {
+  font-family: "Shrikhand", serif;
+}
+.menu__wrapper .title__wrapper .heart {
+  cursor: pointer;
+  background-image: url("../images/icons/Like-empty.svg");
+  height: 25px;
+  width: 25px;
+  margin-top: 20px;
+  transition: background-image 0.3s ease-in-out;
+}
+.menu__wrapper .title__wrapper .heart:hover {
+  background-image: url("../images/icons/Like-colored.svg");
+}
+.menu__wrapper .menu {
+  width: 95%;
+  margin: auto;
+}
+.menu__wrapper .menu h2 {
+  margin-top: 30px;
+  border-bottom: #99E2D0 3px solid;
+  width: 8%;
+}
+.menu__wrapper .menu ul {
+  list-style: none;
+}
+.menu__wrapper .menu ul .card {
+  cursor: pointer;
+  background-color: #fff;
+  margin-top: 10px;
+  border-radius: 15px;
+  padding: 10px 3% 10px 3%;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease forwards;
+}
+.menu__wrapper .menu ul .card .toggle-checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+.menu__wrapper .menu ul .card .card_desc_price {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  position: relative;
+}
+.menu__wrapper .menu ul .card .card_desc_price .price {
+  font-weight: bold;
+  transition: transform 0.5s ease-in-out;
+}
+.menu__wrapper .menu ul .card .card_desc_price .selected {
+  background-image: url("../images/icons/Select-button.svg");
+  position: absolute;
+  top: -38px;
+  right: -24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 61px;
+  height: 68px;
+  transform: translateX(100%);
+  transition: transform 0.5s ease;
+  pointer-events: none;
+  opacity: 0;
+}
+.menu__wrapper .menu ul .card .toggle-checkbox:checked + .card__wrapper .selected {
+  transform: translateX(0);
+  opacity: 1;
+}
+.menu__wrapper .menu ul .card .toggle-checkbox:checked + .card__wrapper .price {
+  transform: translateX(-50px);
+}
+.menu__wrapper .menu ul .card :nth-child(1) {
+  animation-delay: 0.1s;
+}
+.menu__wrapper .menu ul .card :nth-child(2) {
+  animation-delay: 0.2s;
+}
+.menu__wrapper .menu ul .card :nth-child(3) {
+  animation-delay: 0.3s;
+}
+.menu__wrapper .menu ul .card :nth-child(4) {
+  animation-delay: 0.3s;
+}
+.menu__wrapper .order {
+  cursor: pointer;
+  background: linear-gradient(to top, #9356DC, #FF79DA);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  width: 38%;
+  height: 50px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 45px;
+  transition: all 0.3s ease-in-out;
+}
+.menu__wrapper .order:hover {
+  background: linear-gradient(to top, #a16be0, #ff93e1);
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.5);
+}
+
+footer {
+  width: 100%;
+  background-color: #353535;
+  color: white;
+  padding-bottom: 14px;
+  padding-top: 20px;
+}
+footer .footer__wrapper {
+  margin-left: 3%;
+}
+footer .footer__wrapper .footer_logo {
+  filter: invert(1);
+}
+footer .footer__wrapper ul {
+  list-style: none;
+}
+footer .footer__wrapper ul li {
+  margin-top: 5px;
+}
+
+/*# sourceMappingURL=restaurant.css.map */
