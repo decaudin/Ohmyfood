@@ -8,10 +8,13 @@
     <title>Ohmyfood - plateforme réservation restaurant</title>
 </head>
 <body>
+    <div class="loader">
+        <i class="fa-solid fa-wine-bottle"></i>
+    </div>
     <header>
         <img class="logo" src="assets/images/logo/ohmyfood@2x.svg" alt="logo ohmyfood">
         <div class="location">
-            <img src="./assets/images/icons/Pin.svg" alt="localisation" />
+        <i class="fa-solid fa-location-dot"></i>
             Paris, Belleville
         </div>
     </header>
@@ -43,56 +46,60 @@
         </section>
         <section class="restaurants">
             <div class="restaurants__wrapper">
-            <h2>Restaurants</h2>
-                <div class="card">
-                    <a href="pages/la-palette-du-gout.html">
-                        <img src="assets/images/restaurants/la-palette-du-gout.jpg" alt="restaurant La Palette du goût">
-                        <span class="new">Nouveau</span>
-                        <div class="restaurant_desc">
-                            <div class="restaurant_name">
-                                <h3>La palette du goût</h3>
-                                Ménilmontant
+                <h2>Restaurants</h2>
+                <div class="card__line">
+                    <div class="card">
+                        <a href="pages/la-palette-du-gout.html">
+                            <img src="assets/images/restaurants/la-palette-du-gout.jpg" alt="restaurant La Palette du goût">
+                            <span class="new">Nouveau</span>
+                            <div class="restaurant_desc">
+                                <div class="restaurant_name">
+                                    <h3>La palette du goût</h3>
+                                    Ménilmontant
+                                </div>
+                                <div class="heart"></div>
                             </div>
-                            <div class="heart"></div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="pages/la-note-enchantee.html">
+                            <img src="assets/images/restaurants/la-note-enchantée.jpg" alt="restaurant La Note enchantée">
+                            <span class="new">Nouveau</span>
+                            <div class="restaurant_desc">
+                                <div class="restaurant_name">
+                                    <h3>La note enchantée</h3>
+                                    Charonne
+                                </div>
+                                <div class="heart"></div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <div class="card">
-                    <a href="pages/la-note-enchantee.html">
-                        <img src="assets/images/restaurants/la-note-enchantée.jpg" alt="restaurant La Note enchantée">
-                        <span class="new">Nouveau</span>
-                        <div class="restaurant_desc">
-                            <div class="restaurant_name">
-                                <h3>La note enchantée</h3>
-                                Charonne
+                <div class="card__line">
+                    <div class="card">
+                        <a href="pages/a-la-francaise.html">
+                            <img src="assets/images/restaurants/a-la-francaise.jpg" alt="restaurant A la Française">
+                            <div class="restaurant_desc">
+                                <div class="restaurant_name">
+                                    <h3>A la française</h3>
+                                    Cité Rouge
+                                </div>
+                                <div class="heart"></div>
                             </div>
-                            <div class="heart"></div>
-                        </div>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="pages/a-la-francaise.html">
-                        <img src="assets/images/restaurants/a-la-francaise.jpg" alt="restaurant A la Française">
-                        <div class="restaurant_desc">
-                            <div class="restaurant_name">
-                                <h3>A la française</h3>
-                                Cité Rouge
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="pages/le-delice-des-sens.html">
+                            <img src="assets/images/restaurants/le-delice-des-sens.jpg" alt="restaurant Le Délice des sens">
+                            <div class="restaurant_desc">
+                                <div class="restaurant_name">
+                                    <h3>Le délice des sens</h3>
+                                    Folie-Méricourt
+                                </div>
+                                <div class="heart"></div>
                             </div>
-                            <div class="heart"></div>
-                        </div>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="pages/le-delice-des-sens.html">
-                        <img src="assets/images/restaurants/le-delice-des-sens.jpg" alt="restaurant Le Délice des sens">
-                        <div class="restaurant_desc">
-                            <div class="restaurant_name">
-                                <h3>Le délice des sens</h3>
-                                Folie-Méricourt
-                            </div>
-                            <div class="heart"></div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -110,7 +117,7 @@
                     Devenir partenaire
                 </li>
                 <li>
-                    Mention légales
+                    Mentions légales
                 </li>
                 <li>
                     Contact

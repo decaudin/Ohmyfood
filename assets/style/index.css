@@ -8,8 +8,42 @@
 
 body {
   width: 100%;
-  margin: 0;
   overflow-x: hidden;
+  min-width: 320px;
+  max-width: 1440px;
+  margin: auto;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  background: linear-gradient(to top, #9356DC, #FF79DA);
+  animation: slideUp 1.5s ease forwards 1.5s;
+}
+@keyframes slideUp {
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+.loader i {
+  font-size: 100px;
+  animation: rotate 1.3s infinite linear;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 header {
@@ -26,11 +60,16 @@ header .location {
   align-items: center;
   gap: 15px;
   background-color: #EAEAEA;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 8px 0px rgb(0, 0, 0);
   width: 100%;
   height: 63px;
   font-weight: bold;
   align-content: center;
+}
+@media screen and (min-width: 1024px) {
+  header .location {
+    box-shadow: none;
+  }
 }
 
 .discover {
@@ -40,14 +79,12 @@ header .location {
   padding-bottom: 70px;
 }
 .discover h1 {
-  font-size: 48px;
-  width: 78%;
+  font-size: 35px;
   margin: auto;
   margin-bottom: 35px;
 }
 .discover p {
-  font-size: 32px;
-  width: 83%;
+  font-size: 20px;
   margin: auto;
   margin-bottom: 30px;
 }
@@ -58,14 +95,19 @@ header .location {
   border: none;
   color: #fff;
   font-weight: bold;
-  width: 50%;
+  width: 55%;
   height: 50px;
   border-radius: 25px;
   margin-top: 5px;
   transition: all 0.3s ease-in-out;
 }
+@media screen and (min-width: 1024px) {
+  .discover .explore {
+    width: 22%;
+  }
+}
 .discover .explore:hover {
-  background: linear-gradient(to top, #a16be0, #ff93e1);
+  background: linear-gradient(to top, #a36fe1, #ff98e2);
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.5);
 }
 
@@ -74,14 +116,24 @@ header .location {
   margin: auto;
   margin-top: 40px;
 }
+@media screen and (min-width: 1024px) {
+  .function {
+    width: 80%;
+  }
+}
 .function .choose {
   list-style: none;
   padding: 0;
   margin-top: 40px;
   margin-bottom: 80px;
 }
+@media screen and (min-width: 1024px) {
+  .function .choose {
+    display: flex;
+    justify-content: space-between;
+  }
+}
 .function .choose li {
-  position: relative;
   display: flex;
   align-items: center;
   background-color: #F6F6F6;
@@ -92,9 +144,15 @@ header .location {
   margin-bottom: 35px;
   border-radius: 20px;
 }
+@media screen and (min-width: 1024px) {
+  .function .choose li {
+    width: 30%;
+    margin: 0;
+  }
+}
 .function .choose li .bubble {
-  position: absolute;
-  left: -1.5%;
+  position: relative;
+  left: -10px;
   background-color: #9356DC;
   color: #fff;
   border-radius: 10px;
@@ -105,7 +163,18 @@ header .location {
 }
 .function .choose li i {
   position: absolute;
-  left: 10%;
+  left: 19%;
+}
+@media screen and (min-width: 767.98px) {
+  .function .choose li i {
+    left: 25%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .function .choose li i {
+    position: relative;
+    left: 8%;
+  }
 }
 .function .choose li p {
   margin: auto;
@@ -119,22 +188,38 @@ header .location {
 
 .restaurants {
   background-color: #F6F6F6;
-  padding-top: 70px;
-  padding-bottom: 80px;
+  padding: 70px 0 80px 0;
 }
 .restaurants .restaurants__wrapper {
   width: 93%;
   margin: auto;
 }
+@media screen and (min-width: 1024px) {
+  .restaurants .restaurants__wrapper {
+    width: 80%;
+  }
+}
 .restaurants .restaurants__wrapper h2 {
   margin-bottom: 30px;
+}
+@media screen and (min-width: 1024px) {
+  .restaurants .restaurants__wrapper .card__line {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-bottom: 20px;
+  }
 }
 .restaurants .restaurants__wrapper .card {
   position: relative;
   background-color: #fff;
   border-radius: 20px;
-  margin: auto;
   margin-bottom: 20px;
+}
+@media screen and (min-width: 1024px) {
+  .restaurants .restaurants__wrapper .card {
+    width: 46%;
+  }
 }
 .restaurants .restaurants__wrapper .card a {
   text-decoration: none;
@@ -187,15 +272,40 @@ footer {
   padding-bottom: 14px;
   padding-top: 20px;
 }
+@media screen and (min-width: 1024px) {
+  footer {
+    padding-bottom: 29px;
+    padding-top: 55px;
+  }
+}
 footer .footer__wrapper {
   margin-left: 4%;
+}
+@media screen and (min-width: 1024px) {
+  footer .footer__wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 5%;
+  }
 }
 footer .footer__wrapper .footer_logo {
   filter: invert(1);
 }
+@media screen and (min-width: 1024px) {
+  footer .footer__wrapper .footer_logo {
+    width: 12%;
+  }
+}
 footer .footer__wrapper ul {
   list-style: none;
   padding: 0;
+}
+@media screen and (min-width: 1024px) {
+  footer .footer__wrapper ul {
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+  }
 }
 footer .footer__wrapper ul li {
   margin-top: 5px;
