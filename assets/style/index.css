@@ -88,7 +88,7 @@ header .location {
   margin: auto;
   margin-bottom: 30px;
 }
-.discover .explore {
+.discover button {
   cursor: pointer;
   background: linear-gradient(to top, #9356DC, #FF79DA);
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
@@ -102,11 +102,11 @@ header .location {
   transition: all 0.3s ease-in-out;
 }
 @media screen and (min-width: 1024px) {
-  .discover .explore {
+  .discover button {
     width: 22%;
   }
 }
-.discover .explore:hover {
+.discover button:hover {
   background: linear-gradient(to top, #a36fe1, #ff98e2);
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.5);
 }
@@ -138,7 +138,7 @@ header .location {
   align-items: center;
   background-color: #F6F6F6;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
-  width: 90%;
+  width: 99%;
   height: 72px;
   margin: auto;
   margin-bottom: 35px;
@@ -162,22 +162,22 @@ header .location {
   align-items: center;
 }
 .function .choose li i {
-  position: absolute;
-  left: 19%;
-}
-@media screen and (min-width: 767.98px) {
-  .function .choose li i {
-    left: 25%;
-  }
+  position: relative;
+  left: 8%;
 }
 @media screen and (min-width: 1024px) {
   .function .choose li i {
-    position: relative;
-    left: 8%;
+    left: 5%;
   }
 }
 .function .choose li p {
-  margin: auto;
+  position: relative;
+  left: 17%;
+}
+@media screen and (min-width: 1024px) {
+  .function .choose li p {
+    left: 12%;
+  }
 }
 .function .choose li:nth-child(-n+2) i {
   color: #7E7E7E;
@@ -190,49 +190,48 @@ header .location {
   background-color: #F6F6F6;
   padding: 70px 0 80px 0;
 }
-.restaurants .restaurants__wrapper {
-  width: 93%;
+.restaurants__wrapper {
+  width: 92%;
   margin: auto;
 }
 @media screen and (min-width: 1024px) {
-  .restaurants .restaurants__wrapper {
+  .restaurants__wrapper {
     width: 80%;
   }
 }
-.restaurants .restaurants__wrapper h2 {
+.restaurants__wrapper h2 {
   margin-bottom: 30px;
 }
 @media screen and (min-width: 1024px) {
-  .restaurants .restaurants__wrapper .card__line {
+  .restaurants__wrapper .card__line {
     display: flex;
     justify-content: space-between;
     margin: auto;
     margin-bottom: 20px;
   }
 }
-.restaurants .restaurants__wrapper .card {
+.restaurants__wrapper .card {
   position: relative;
   background-color: #fff;
   border-radius: 20px;
   margin-bottom: 20px;
 }
 @media screen and (min-width: 1024px) {
-  .restaurants .restaurants__wrapper .card {
+  .restaurants__wrapper .card {
     width: 46%;
   }
 }
-.restaurants .restaurants__wrapper .card a {
+.restaurants__wrapper .card a {
   text-decoration: none;
   color: inherit;
-  width: 100%;
 }
-.restaurants .restaurants__wrapper .card a img {
+.restaurants__wrapper .card a img {
   width: 100%;
   height: 231px;
   object-fit: cover;
   border-radius: 20px 20px 0 0;
 }
-.restaurants .restaurants__wrapper .card a .new {
+.restaurants__wrapper .card a .new {
   position: absolute;
   right: 4vh;
   top: 5vh;
@@ -241,27 +240,27 @@ header .location {
   padding: 10px;
   border-radius: 3px;
 }
-.restaurants .restaurants__wrapper .card a .restaurant_desc {
+.restaurants__wrapper .card a .restaurant_desc {
   width: 90%;
   display: flex;
   justify-content: space-between;
   margin: auto;
 }
-.restaurants .restaurants__wrapper .card a .restaurant_desc .restaurant_name {
+.restaurants__wrapper .card a .restaurant_desc .restaurant_name {
   margin-bottom: 20px;
 }
-.restaurants .restaurants__wrapper .card a .restaurant_desc .restaurant_name h3 {
+.restaurants__wrapper .card a .restaurant_desc .restaurant_name h3 {
   margin-top: 10px;
   margin-bottom: 8px;
 }
-.restaurants .restaurants__wrapper .card a .restaurant_desc .heart {
+.restaurants__wrapper .card a .restaurant_desc .heart {
   background-image: url("../images/icons/Like-empty.svg");
   height: 25px;
   width: 25px;
   margin-top: 20px;
   transition: background-image 0.3s ease-in-out;
 }
-.restaurants .restaurants__wrapper .card a .restaurant_desc .heart:hover {
+.restaurants__wrapper .card a .restaurant_desc .heart:hover {
   background-image: url("../images/icons/Like-colored.svg");
 }
 
@@ -288,11 +287,11 @@ footer .footer__wrapper {
     margin-right: 5%;
   }
 }
-footer .footer__wrapper .footer_logo {
+footer .footer__wrapper__logo {
   filter: invert(1);
 }
 @media screen and (min-width: 1024px) {
-  footer .footer__wrapper .footer_logo {
+  footer .footer__wrapper__logo {
     width: 12%;
   }
 }
@@ -312,6 +311,10 @@ footer .footer__wrapper ul li {
 }
 footer .footer__wrapper ul li i {
   margin-right: 10px;
+}
+footer .footer__wrapper ul li a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /*# sourceMappingURL=index.css.map */

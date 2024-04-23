@@ -9,19 +9,19 @@
 </head>
 <body>
     <header>
-        <nav>
-            <a href="/index.html"><i class="fa-solid fa-arrow-left"></i></a>
-            <img class="logo" src="../assets/images/logo/ohmyfood@2x.svg" alt="logo ohmyfood">
+        <nav class="navbar">
+            <a class="navbar__link" href="/index.html"><i class="fa-solid fa-arrow-left"></i></a>
+            <img class="navbar__logo" src="../assets/images/logo/ohmyfood@2x.svg" alt="logo ohmyfood">
         </nav>
         <img class="restaurant_photo" src="../assets/images/restaurants/la-palette-du-gout.jpg" alt="restaurant La palette du goût">
     </header>
     <main>
-        <div class="menu__wrapper">
-            <div class="title__wrapper">
+        <div class="menu">
+            <div class="menu__title">
                 <h1>La palette du goût</h1>
                 <div class="heart"></div>
             </div>
-            <div class="menu">
+            <div class="menu__content">
                 <h2>ENTRÉES</h2>
                 <ul>
                     <li class="card">
@@ -29,7 +29,7 @@
                         <label for="toggle_1"></label>
                         <div class="card__content">
                             <h3>Fricassée d'escargots</h3>
-                            <div class="card_desc_price">
+                            <div class="card__content_desc_price">
                                 <p class="desc">Au piment d'Espelette</p>
                                 <span class="price">25€</span>
                                 <div class="selected"></div>
@@ -41,7 +41,7 @@
                         <label for="toggle_2"></label>
                         <div class="card__content">
                             <h3>Foie gras de canard mi-cuit</h3>
-                            <div class="card_desc_price">
+                            <div class="card__content_desc_price">
                                 <p class="desc">Et ses copeaux de truffe noire</p>
                                 <span class="price">35€</span>
                                 <div class="selected"></div>
@@ -53,7 +53,7 @@
                         <label for="toggle_3"></label>
                         <div class="card__content">
                             <h3>Oeuf au plat</h3>
-                            <div class="card_desc_price">
+                            <div class="card__content_desc_price">
                                 <p class="desc">Assaisonné à la truffe sur lit de caviar</p>
                                 <span class="price">20€</span>
                                 <div class="selected"></div>
@@ -62,7 +62,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="menu">
+            <div class="menu__content">
                 <h2>PLATS</h2>
                 <ul>
                     <li class="card">
@@ -70,7 +70,7 @@
                         <label for="toggle_4"></label>
                         <div class="card__content">
                             <h3>Filet de boeuf aux herbes</h3>
-                            <div class="card_desc_price">
+                            <div class="card__content_desc_price">
                                 <p class="desc">Accompagné de sa ribambelle de légumes</p>
                                 <span class="price">40€</span>
                                 <div class="selected"></div>
@@ -82,7 +82,7 @@
                         <label for="toggle_5"></label>
                         <div class="card__content">
                             <h3>Parmentier de queue de boeuf</h3>
-                            <div class="card_desc_price">
+                            <div class="card__content_desc_price">
                                 <p class="desc">À la truffe noire sur sa purée de panais</p>
                                 <span class="price">35€</span>
                                 <div class="selected"></div>
@@ -94,7 +94,7 @@
                         <label for="toggle_6"></label>
                         <div class="card__content">
                             <h3>Filet de turbot</h3>
-                            <div class="card_desc_price">
+                            <div class="card__content_desc_price">
                                 <p class="desc">Aux agrumes</p>
                                 <span class="price">44€</span>
                                 <div class="selected"></div>
@@ -103,7 +103,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="menu">
+            <div class="menu__content">
                 <h2>DESSERTS</h2>
                 <ul>
                     <li class="card">
@@ -111,7 +111,7 @@
                         <label for="toggle_7"></label>
                         <div class="card__content">
                             <h3>Paris-Brest</h3>
-                            <div class="card_desc_price">
+                            <div class="card__content_desc_price">
                                 <p class="desc">Revisité</p>
                                 <span class="price">18€</span>
                                 <div class="selected"></div>
@@ -123,7 +123,7 @@
                         <label for="toggle_8"></label>
                         <div class="card__content">
                             <h3>Macaron au chocolat d'exception</h3>
-                            <div class="card_desc_price">
+                            <div class="card__content_desc_price">
                                 <p class="desc">Et glace à la vanille de Madagascar</p>
                                 <span class="price">22€</span>
                                 <div class="selected"></div>
@@ -135,7 +135,7 @@
                         <label for="toggle_9"></label>
                         <div class="card__content">
                             <h3>Mousse au chocolat</h3>
-                            <div class="card_desc_price">
+                            <div class="card__content_desc_price">
                                 <p class="desc">Au piment d'Espelette et à la truffe noire</p>
                                 <span class="price">23€</span>
                                 <div class="selected"></div>
@@ -149,7 +149,7 @@
     </main>
     <footer>
         <div class="footer__wrapper">
-            <img class="footer_logo" src="../assets/images/logo/ohmyfood@2x.svg" alt="logo ohmyfood">
+            <img class="footer__wrapper__logo" src="../assets/images/logo/ohmyfood@2x.svg" alt="logo ohmyfood">
             <ul>
                 <li>
                     <i class="fa-solid fa-utensils"></i>
@@ -163,7 +163,7 @@
                     Mentions légales
                 </li>
                 <li>
-                    Contact
+                    <a href="mailto:ohmyfood-contact@gmail.com">Contact</a>
                 </li>
             </ul>
         </div>

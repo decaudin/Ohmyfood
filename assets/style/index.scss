@@ -101,12 +101,14 @@ header {
         margin: auto;
         margin-bottom: 35px;
     }
+
     p {
         font-size: 20px;
         margin: auto;
         margin-bottom: 30px;
     }
-    .explore {
+    
+    button {
         cursor: pointer;
         background: linear-gradient(to top, $primary, $secondary);
         box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
@@ -155,7 +157,7 @@ header {
             align-items: center;
             background-color: $clear-grey;
             box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
-            width: 90%;
+            width: 99%;
             height: 72px;
             margin: auto;
             margin-bottom: 35px;
@@ -179,21 +181,21 @@ header {
             }
 
             i {
-                position: absolute;
-                left: 19%;
-
-                @media screen and (min-width: 767.98px) {
-                    left: 25%;
-                }
+                position: relative;
+                left: 8%;
 
                 @media screen and (min-width: 1024px) {
-                    position: relative;
-                    left: 8%;                    
+                    left: 5%;
                 }
             }
 
             p {
-                margin: auto;
+                position: relative;
+                left: 17%;
+
+                @media screen and (min-width: 1024px) {
+                    left: 12%;
+                }
             }
 
             &:nth-child(-n+2) i {
@@ -211,8 +213,8 @@ header {
     background-color: $clear-grey;
     padding: 70px 0 80px 0;
 
-    .restaurants__wrapper {
-        width: 93%;
+    &__wrapper {
+        width: 92%;
         margin: auto;
 
         @media screen and (min-width: 1024px) {
@@ -245,7 +247,6 @@ header {
             a {
                 text-decoration: none;
                 color: inherit;
-                width: 100%;
 
                 img {
                     width: 100%;
@@ -317,7 +318,7 @@ footer {
             margin-right: 5%;
         }
 
-        .footer_logo {
+        &__logo {
             filter: invert(1);
 
             @media screen and (min-width: 1024px) {
@@ -341,6 +342,14 @@ footer {
                 i {
                     margin-right: 10px;
                 }
+
+                a {
+                    text-decoration: none;
+                    color: inherit;                    
+                }
+                
+
+                
             }
         }
     }

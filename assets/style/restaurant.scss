@@ -28,7 +28,7 @@ body {
 
 header {
     
-    nav {
+    .navbar {
         display: flex;
         align-items: center;
         margin-top: 10px;
@@ -44,7 +44,7 @@ header {
             }
         }
 
-        .logo {
+        &__logo {
             margin: auto;
             width: 40%;
 
@@ -69,7 +69,7 @@ header {
     }
 }
 
-.menu__wrapper {
+.menu {
     width: 100%;
     background-color: $clear-grey;
     padding-top: 70px;
@@ -81,7 +81,7 @@ header {
         margin: auto;
     }
 
-    .title__wrapper {
+    &__title {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -97,7 +97,6 @@ header {
             background-image: url("../images/icons/Like-empty.svg");
             height: 25px;
             width: 25px;
-            margin-top: 20px;
             transition: background-image 0.3s ease-in-out;
 
             &:hover {
@@ -106,7 +105,7 @@ header {
         }    
     }
 
-    .menu {
+    &__content {
         width: 95%;
         margin: auto;       
 
@@ -149,14 +148,9 @@ header {
                     z-index: 1;
                     cursor: pointer;
                 }
-
-                label {
-                    width: calc(100% - 67px);
-                    overflow: hidden;
-                    white-space: nowrap; 
-                }
                 
-                .card__content {
+                &__content {
+                    width: 100%;
 
                     h3 {
                         font-size: 17px;
@@ -169,7 +163,7 @@ header {
                         }
                     }
                 
-                    .card_desc_price {
+                    &_desc_price {
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
@@ -178,9 +172,12 @@ header {
 
                         .desc {
                             font-size: 13px;
+                            max-width: 80%;
                             white-space: nowrap;
                             overflow: hidden;
                             text-overflow: ellipsis;
+                            position: relative; // essai
+                            z-index: 2;  // essai
 
                             @media screen and (min-width: 767.98px) {
                                 font-size: 16px;
@@ -190,6 +187,8 @@ header {
                         .price {
                             font-weight: bold;
                             transition: transform 0.25s ease-out;
+                            position: relative;     //essai
+                            z-index: 1; // essai
                         }
                     
                         .selected {
@@ -281,6 +280,11 @@ footer  {
     padding-bottom: 14px;
     padding-top: 20px;
 
+    @media screen and (min-width: 1024px) {
+        padding-bottom: 23px;
+        padding-top: 60px;
+    }
+
     .footer__wrapper {
         margin-left: 3%;
 
@@ -290,7 +294,7 @@ footer  {
             margin-right: 5%;
         }
 
-        .footer_logo {
+        &__logo {
             filter: invert(1);
 
             @media screen and (min-width: 1024px) {
@@ -300,6 +304,7 @@ footer  {
 
         ul {
             list-style: none;
+            padding: 0;
             
             @media screen and (min-width: 1024px) {
                 display: flex;
@@ -309,6 +314,15 @@ footer  {
             
             li {
                 margin-top: 5px;
+
+                i {
+                    margin-right: 10px;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: inherit;                    
+                }
             }
         }
     }
