@@ -1,17 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-
-// Couleurs
-
-$primary: #9356DC;
-$secondary: #FF79DA;
-$tertiary: #99E2D0;
-$background-black: #353535;
-$dark-grey: #7E7E7E;
-$middle-grey: #EAEAEA;
-$clear-grey: #F6F6F6;
-$white: #fff;
-$black: #101010;
+@import 'utils/colors';
+@import 'utils/button';
+@import 'utils/footer';
 
 * {
     font-family: "Roboto", serif;
@@ -22,7 +13,6 @@ $black: #101010;
 
 body {
     min-width: 320px;
-    max-width: 1440px;
     margin: auto;
 }
 
@@ -31,29 +21,22 @@ header {
     .navbar {
         display: flex;
         align-items: center;
-        margin-top: 10px;
+        margin-top: 20px;
 
         i {
             font-size: 20px;
             color: $black;
-            position: relative;
+            position: absolute;
             left: 10px;
-
-            @media screen and (min-width: 1024px) {
-                font-size: 30px;
-            }
+            top: 27px;
         }
 
         &__logo {
             margin: auto;
-            width: 40%;
+            margin-bottom: -10px;
 
             @media screen and (min-width: 767.98px) {
-                width: 30%;
-            }
-
-            @media screen and (min-width: 1024px) {
-                width: 22%;
+                margin-bottom: 0;              
             }
         }
     }
@@ -70,7 +53,6 @@ header {
 }
 
 .menu {
-    width: 100%;
     background-color: $clear-grey;
     padding-top: 70px;
     padding-bottom: 50px;
@@ -96,8 +78,13 @@ header {
             cursor: pointer;
             background-image: url("../images/icons/Like-empty.svg");
             height: 25px;
-            width: 25px;
+            width: 26px;
+            background-repeat: no-repeat;
             transition: background-image 0.3s ease-in-out;
+
+            @media screen and (min-width: 767.98px) {
+                width: 25px;
+            }
 
             &:hover {
                 background-image: url("../images/icons/Like-colored.svg")
@@ -116,18 +103,19 @@ header {
         }
 
         ul {
-            list-style: none;
-
+            list-style: none;            
+        
             .card {
-                cursor: pointer;
-                background-color: $white;
                 margin-top: 10px;
-                border-radius: 15px;
-                padding: 10px 3% 10px 3%;
+                padding: 10px 3% 9px 3%;
                 animation: fadeInUp 1.5s ease forwards;
-                overflow: hidden;
                 opacity: 0;
-
+                border-radius: 15px;
+                overflow: hidden;
+                background: $white;
+                box-shadow: 0 0 12px $shadow-grey;
+                cursor: pointer;                                     
+        
                 @keyframes fadeInUp {
                     from {
                         transform: translateY(-20px);
@@ -137,95 +125,66 @@ header {
                         transform: translateY(0);
                     }
                 }
-
-                .toggle-checkbox {
-                    position: absolute;
-                    opacity: 0;
-                    width: 100%;
-                    height: 100%;
-                    top: 0;
-                    left: 0;
-                    z-index: 1;
-                    cursor: pointer;
-                }
-                
+        
                 &__content {
                     width: 100%;
-
+                    font-size: clamp(12px, 2vw, 18px);
+                    transition: width 0.3s ease; 
+        
                     h3 {
+                        max-width: 92%;
                         font-size: 17px;
-                        overflow: hidden;
                         white-space: nowrap;
+                        overflow: hidden;
                         text-overflow: ellipsis;
 
                         @media screen and (min-width: 767.98px) {
                             font-size: 19px;
                         }
                     }
-                
+
                     &_desc_price {
+                        margin-top: 5px;
                         display: flex;
                         justify-content: space-between;
-                        align-items: center;
-                        margin-top: 5px;
-                        position: relative;
 
                         .desc {
+                            max-width: 87%;
                             font-size: 13px;
-                            max-width: 80%;
                             white-space: nowrap;
                             overflow: hidden;
                             text-overflow: ellipsis;
-                            position: relative; // essai
-                            z-index: 2;  // essai
 
                             @media screen and (min-width: 767.98px) {
                                 font-size: 16px;
                             }
                         }
-                        
+            
                         .price {
                             font-weight: bold;
-                            transition: transform 0.25s ease-out;
-                            position: relative;     //essai
-                            z-index: 1; // essai
-                        }
-                    
-                        .selected {
-                            background-image: url("../images/icons/Select-button.svg");
-                            position: absolute;
-                            top: -38px;
-                            right: -24px;
-                            background-size: contain;
-                            background-repeat: no-repeat;
-                            width: 61px;
-                            height: 68px;
-                            
-                            @media screen and (min-width: 767.98px) {
-                                right: -29px;
-                            }
-
-                            @media screen and (min-width: 1024px) {
-                                right: -31px;
-                            }
-                        }
-                    }
+                        } 
+                    }   
                 }
-
-                .toggle-checkbox:checked ~ .card__content .selected {
-                    transition: 0.25s ease-out; 
+        
+                .selected {
+                    background-image: url("../images/icons/Select-button.svg");
+                    background-position: center;
+                    height: 100%;
+                    width: 0;
+                    transition: width 0.3s ease;
+                    position: absolute;
+                    top: 0;
+                    right: -1px;
                 }
-            
-                .toggle-checkbox:checked ~ .card__content .price {
-                    transform: translateX(-50px);
+        
+                &:hover .selected {
+                    width: 60px;
                 }
-
-                .toggle-checkbox:not(:checked) ~ .card__content .selected {
-                    transform: translateX(100%);
-                    opacity: 0;
-                    transition: all 0.25s ease-out;
+        
+                &:hover .card__content {
+                    width: calc(100% - 60px);
                 }
-            }
+            } 
         }
 
         .card:nth-child(1) {
@@ -246,84 +205,20 @@ header {
     } 
     
     .order {
-        cursor: pointer;
-        background: linear-gradient(to top, $primary, $secondary);
-        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-        border: none;
-        color: $white;
-        font-weight: bold;
+        @include button;
         width: 38%;
-        height: 50px;
-        border-radius: 25px;
         display: flex;
         align-items: center;
         justify-content: center;
         margin: auto;
         margin-top: 45px;
-        transition: all 0.3s ease-in-out;
 
         @media screen and (min-width: 767.98px) {
             width: 30%;
-        }
-
-        &:hover {
-            background: linear-gradient(to top, lighten($primary, 6%), lighten($secondary, 6%));
-            box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.5);
         }
     }
 }
   
 footer  {
-    width: 100%;
-    background-color: $background-black;
-    color: white;
-    padding-bottom: 14px;
-    padding-top: 20px;
-
-    @media screen and (min-width: 1024px) {
-        padding-bottom: 23px;
-        padding-top: 60px;
-    }
-
-    .footer__wrapper {
-        margin-left: 3%;
-
-        @media screen and (min-width: 1024px) {
-            display: flex;
-            flex-direction: row-reverse;
-            margin-right: 5%;
-        }
-
-        &__logo {
-            filter: invert(1);
-
-            @media screen and (min-width: 1024px) {
-                width: 12%;
-            }
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            
-            @media screen and (min-width: 1024px) {
-                display: flex;
-                justify-content: space-evenly;
-                width: 70%;
-            }
-            
-            li {
-                margin-top: 5px;
-
-                i {
-                    margin-right: 10px;
-                }
-
-                a {
-                    text-decoration: none;
-                    color: inherit;                    
-                }
-            }
-        }
-    }
+    @include footer;
 }

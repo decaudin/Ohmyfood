@@ -9,38 +9,28 @@
 
 body {
   min-width: 320px;
-  max-width: 1440px;
   margin: auto;
 }
 
 header .navbar {
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 header .navbar i {
   font-size: 20px;
   color: #101010;
-  position: relative;
+  position: absolute;
   left: 10px;
-}
-@media screen and (min-width: 1024px) {
-  header .navbar i {
-    font-size: 30px;
-  }
+  top: 27px;
 }
 header .navbar__logo {
   margin: auto;
-  width: 40%;
+  margin-bottom: -10px;
 }
 @media screen and (min-width: 767.98px) {
   header .navbar__logo {
-    width: 30%;
-  }
-}
-@media screen and (min-width: 1024px) {
-  header .navbar__logo {
-    width: 22%;
+    margin-bottom: 0;
   }
 }
 header .restaurant_photo {
@@ -54,7 +44,6 @@ header .restaurant_photo {
 }
 
 .menu {
-  width: 100%;
   background-color: #F6F6F6;
   padding-top: 70px;
   padding-bottom: 50px;
@@ -80,8 +69,14 @@ header .restaurant_photo {
   cursor: pointer;
   background-image: url("../images/icons/Like-empty.svg");
   height: 25px;
-  width: 25px;
+  width: 26px;
+  background-repeat: no-repeat;
   transition: background-image 0.3s ease-in-out;
+}
+@media screen and (min-width: 767.98px) {
+  .menu__title .heart {
+    width: 25px;
+  }
 }
 .menu__title .heart:hover {
   background-image: url("../images/icons/Like-colored.svg");
@@ -99,14 +94,15 @@ header .restaurant_photo {
   list-style: none;
 }
 .menu__content ul .card {
-  cursor: pointer;
-  background-color: #fff;
   margin-top: 10px;
-  border-radius: 15px;
-  padding: 10px 3% 10px 3%;
+  padding: 10px 3% 9px 3%;
   animation: fadeInUp 1.5s ease forwards;
-  overflow: hidden;
   opacity: 0;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 12px #cecece;
+  cursor: pointer;
 }
 @keyframes fadeInUp {
   from {
@@ -117,23 +113,16 @@ header .restaurant_photo {
     transform: translateY(0);
   }
 }
-.menu__content ul .card .toggle-checkbox {
-  position: absolute;
-  opacity: 0;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  cursor: pointer;
-}
 .menu__content ul .card__content {
   width: 100%;
+  font-size: clamp(12px, 2vw, 18px);
+  transition: width 0.3s ease;
 }
 .menu__content ul .card__content h3 {
+  max-width: 92%;
   font-size: 17px;
-  overflow: hidden;
   white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 @media screen and (min-width: 767.98px) {
@@ -142,20 +131,16 @@ header .restaurant_photo {
   }
 }
 .menu__content ul .card__content_desc_price {
+  margin-top: 5px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-top: 5px;
-  position: relative;
 }
 .menu__content ul .card__content_desc_price .desc {
+  max-width: 87%;
   font-size: 13px;
-  max-width: 80%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  position: relative;
-  z-index: 2;
 }
 @media screen and (min-width: 767.98px) {
   .menu__content ul .card__content_desc_price .desc {
@@ -164,40 +149,22 @@ header .restaurant_photo {
 }
 .menu__content ul .card__content_desc_price .price {
   font-weight: bold;
-  transition: transform 0.25s ease-out;
-  position: relative;
-  z-index: 1;
 }
-.menu__content ul .card__content_desc_price .selected {
+.menu__content ul .card .selected {
   background-image: url("../images/icons/Select-button.svg");
+  background-position: center;
+  height: 100%;
+  width: 0;
+  transition: width 0.3s ease;
   position: absolute;
-  top: -38px;
-  right: -24px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 61px;
-  height: 68px;
+  top: 0;
+  right: -1px;
 }
-@media screen and (min-width: 767.98px) {
-  .menu__content ul .card__content_desc_price .selected {
-    right: -29px;
-  }
+.menu__content ul .card:hover .selected {
+  width: 60px;
 }
-@media screen and (min-width: 1024px) {
-  .menu__content ul .card__content_desc_price .selected {
-    right: -31px;
-  }
-}
-.menu__content ul .card .toggle-checkbox:checked ~ .card__content .selected {
-  transition: 0.25s ease-out;
-}
-.menu__content ul .card .toggle-checkbox:checked ~ .card__content .price {
-  transform: translateX(-50px);
-}
-.menu__content ul .card .toggle-checkbox:not(:checked) ~ .card__content .selected {
-  transform: translateX(100%);
-  opacity: 0;
-  transition: all 0.25s ease-out;
+.menu__content ul .card:hover .card__content {
+  width: calc(100% - 60px);
 }
 .menu__content .card:nth-child(1) {
   animation-delay: 0.1s;
@@ -218,41 +185,40 @@ header .restaurant_photo {
   border: none;
   color: #fff;
   font-weight: bold;
-  width: 38%;
   height: 50px;
   border-radius: 25px;
+  transition: all 0.3s ease-in-out;
+  width: 38%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: auto;
   margin-top: 45px;
-  transition: all 0.3s ease-in-out;
+}
+.menu .order:hover {
+  background: linear-gradient(to top, #a36fe1, #ff98e2);
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.5);
 }
 @media screen and (min-width: 767.98px) {
   .menu .order {
     width: 30%;
   }
 }
-.menu .order:hover {
-  background: linear-gradient(to top, #a36fe1, #ff98e2);
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.5);
-}
 
 footer {
-  width: 100%;
   background-color: #353535;
-  color: white;
+  color: #fff;
   padding-bottom: 14px;
   padding-top: 20px;
 }
 @media screen and (min-width: 1024px) {
   footer {
-    padding-bottom: 23px;
-    padding-top: 60px;
+    padding-bottom: 29px;
+    padding-top: 55px;
   }
 }
 footer .footer__wrapper {
-  margin-left: 3%;
+  margin-left: 4%;
 }
 @media screen and (min-width: 1024px) {
   footer .footer__wrapper {

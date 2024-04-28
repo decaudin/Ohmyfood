@@ -1,0 +1,53 @@
+@mixin footer {
+    background-color: $background-black;
+    color: $white;
+    padding-bottom: 14px;
+    padding-top: 20px;
+
+    @media screen and (min-width: 1024px) {
+        padding-bottom: 29px;
+        padding-top: 55px;
+    }
+
+    .footer__wrapper {
+        margin-left: 4%;
+
+        @media screen and (min-width: 1024px) {
+            display: flex;
+            flex-direction: row-reverse;
+            margin-right: 5%;
+        }
+
+        &__logo {
+            filter: invert(1);
+
+            @media screen and (min-width: 1024px) {
+                width: 12%;
+            }
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+
+            @media screen and (min-width: 1024px) {
+                display: flex;
+                justify-content: space-evenly;
+                width: 70%;
+            }
+
+            li {
+                margin-top: 5px;
+
+                i {
+                    margin-right: 10px;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: inherit;                    
+                }                
+            }
+        }
+    }
+}
