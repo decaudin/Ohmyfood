@@ -4,7 +4,7 @@
     padding-bottom: 14px;
     padding-top: 20px;
 
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 767.98px) {
         padding-bottom: 29px;
         padding-top: 55px;
     }
@@ -12,7 +12,7 @@
     .footer__wrapper {
         margin-left: 4%;
 
-        @media screen and (min-width: 1024px) {
+        @media screen and (min-width: 767.98px) {
             display: flex;
             flex-direction: row-reverse;
             margin-right: 5%;
@@ -20,6 +20,10 @@
 
         &__logo {
             filter: invert(1);
+
+            @media screen and (min-width: 767.98px) {
+                width: 15%;
+            }
 
             @media screen and (min-width: 1024px) {
                 width: 12%;
@@ -30,9 +34,13 @@
             list-style: none;
             padding: 0;
 
-            @media screen and (min-width: 1024px) {
+            @media screen and (min-width: 767.98px) {
                 display: flex;
                 justify-content: space-evenly;
+                width: 88%;
+            }
+
+            @media screen and (min-width: 1024px) {
                 width: 70%;
             }
 
